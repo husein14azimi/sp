@@ -10,10 +10,18 @@
 <body>
     <form method="post">{% csrf_token %}
         {{ form.as_p }}
+
+        {% if form %}
         <button type="submit">Submit</button>
+        {% endif %}
     </form>
     {% if textShownInHtml %}
     <p>You entered: {{ textShownInHtml }}</p>
+    <p style="font-family: monospace;">request: {{ request }}</p>
+    <p>request user: <span style="font-family: monospace;">{{ request.user }}</span></p>
+    <p>request method: <span style="font-family: monospace;">{{ request.method }}</span></p>
+    <p>request data: <span style="font-family: monospace;">{{ request.data }}</span></p>
+    <p>request conf: <span style="font-family: monospace;">{{ request.conf }}</span></p>
     {% endif %}
 </body>
 
