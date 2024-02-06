@@ -30,9 +30,9 @@ LOGOUT_URL = "account:logout"
 SECRET_KEY = 'django-insecure-g$l-i1=vn%)-k6!dde*i7oc=w7zncyou*4j)*qi0v(766%+i2#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['sprediction.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -84,12 +84,26 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+# for localhost server
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# for sprediction.pythonanywhere server DB:
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': '$default',
+#         'HOST': '.mysql.pythonanywhere-services.com',
+#         'USER': '',
+#         'PASSWORD': 'Aa@123456'
+#     }
+# }
 
 
 # Password validation
@@ -114,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-ir'
 
 TIME_ZONE = 'Asia/Tehran'
 
