@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+</head>
+
+<body>
+    <form action="{% url 'account:login' %}" method="post">{% csrf_token %}
+        {% if form.errors %}
+        <div class="errors">
+            {{ form.non_field_errors }}
+            {% if form.username.errors %}
+            <p>username error:{{ form.username.errors }}</p>
+            {% endif %}
+            {% if form.password.errors %}
+            <p>password error:{{ form.password.errors }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+        <label for="username">نام کاربری:</label>
+        <input type="text" name="username" id="username" autofocus="" autocapitalize="none" autocomplete="username"
+            required="">
+
+        <br><br>
+
+        <label for="userpass">رمز عبور:</label>
+        <input type="password" name="password" id="userpass" autocomplete="current-password" required="">
+
+        <br><br>
+
+        <button class="login-btn" id="loginBtn" type="submit">ورود</button>
+    </form>
+</body>
+
+</html>

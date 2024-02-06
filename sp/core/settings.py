@@ -17,9 +17,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "account:sp"
+LOGOUT_REDIRECT_URL = "homepage"
 LOGIN_URL = "account:login"
+LOGOUT_URL = "account:logout"
 
 
 # Quick-start development settings - unsuitable for production
@@ -127,15 +128,21 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+# Hussein Azimi: Media files
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# django automatically converts decimal values to string. this prevents it.
+# HA: django automatically converts decimal values to string. this prevents it.
 REST_FRAMEWORK = {
     'COERCE_DECIMAL_TO_STRING': False
 }
 
-# to avoid the app-to-app dependency, we define this for changing auth flow:
+# HA: to avoid the app-to-app dependency, we define this for changing auth flow:
 AUTH_USER_MODEL = 'account.User'

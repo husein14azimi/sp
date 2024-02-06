@@ -3,10 +3,9 @@
 # It is also provided as a convenience to those who want to deploy these URLs
 # elsewhere.
 
-from django.contrib import admin
 from django.contrib.auth import views
 from django.urls import path
-from .views import home
+from .views import sp, logoutpage
 
 
 app_name = 'account'
@@ -14,7 +13,9 @@ app_name = 'account'
 
 urlpatterns = [
     path("login/", views.LoginView.as_view(), name="login"),
-    # path("logout/", views.LogoutView.as_view(), name="logout"),
+    path("logout/", views.LogoutView.as_view(), name="logout"),
+
+
     # path("password_change/", views.PasswordChangeView.as_view(), name="password_change"
     #      ),
     # path("password_change/done/", views.PasswordChangeDoneView.as_view(), name="password_change_done",
@@ -29,6 +30,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('admin/', admin.site.urls),
-    path('', home, name='home'),
+    path('', sp, name='sp'),
+    path('logoutpage/', logoutpage, name='logoutpage'),
 ]

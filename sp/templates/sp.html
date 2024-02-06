@@ -4,10 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Suicide Prediction: App</title>
 </head>
 
 <body>
+    <img src="{{ user.profile_image.url }}"
+        alt="{{user.first_name}} {{user.last_name}} (username:{{user}}) 's Profile Image">
+    <p>NAME: {{ user.first_name }} {{ user.last_name }}</p>
+    <p>USERNAME: {{ user.username }}</p>
+
+    <br><br>
+
     <form method="post">{% csrf_token %}
         {{ form.as_p }}
 
@@ -15,14 +22,17 @@
         <button type="submit">Submit</button>
         {% endif %}
     </form>
+
     {% if textShownInHtml %}
     <p>You entered: {{ textShownInHtml }}</p>
     <p style="font-family: monospace;">request: {{ request }}</p>
     <p>request user: <span style="font-family: monospace;">{{ request.user }}</span></p>
     <p>request method: <span style="font-family: monospace;">{{ request.method }}</span></p>
-    <p>request data: <span style="font-family: monospace;">{{ request.data }}</span></p>
-    <p>request conf: <span style="font-family: monospace;">{{ request.conf }}</span></p>
     {% endif %}
+
+
+    <br><br><br><br><br><br>
+    <a href="{% url 'account:logoutpage' %}">Log Out</a>
 </body>
 
 </html>

@@ -15,27 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.urls import path, include
+from django.contrib import admin
+from django.conf.urls.static import static
+from .views import homepage
+from .settings import MEDIA_URL, MEDIA_ROOT
+# from django.conf import settings
 
 
 app_name = 'core'
 
 urlpatterns = [
-    # path("login/", views.LoginView.as_view(), name="login"),
-    # path("logout/", views.LogoutView.as_view(), name="logout"),
-    # path("password_change/", views.PasswordChangeView.as_view(), name="password_change"
-    #      ),
-    # path("password_change/done/", views.PasswordChangeDoneView.as_view(), name="password_change_done",
-    #      ),
-    # path("password_reset/", views.PasswordResetView.as_view(), name="password_reset"),
-    # path("password_reset/done/", views.PasswordResetDoneView.as_view(), name="password_reset_done",
-    #      ),
-    # path("reset/<uidb64>/<token>/", views.PasswordResetConfirmView.as_view(), name="password_reset_confirm",
-    #      ),
-    # path("reset/done/", views.PasswordResetCompleteView.as_view(), name="password_reset_complete",
-    #  ),
-]
-
-
-urlpatterns += [
-    path('account/', include('account.urls'))
-]
+    path('account/', include('account.urls')),
+    path('admin/', admin.site.urls),
+    path('', homepage, name='homepage'),
+] + static(MEDIA_URL, document_root=MEDIA_ROOT)
