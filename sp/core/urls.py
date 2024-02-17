@@ -28,4 +28,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('admin/', admin.site.urls),
     path('', homepage, name='homepage'),
+
+    path('', include('social_django.urls', namespace='social')),
+
 ] + static(MEDIA_URL, document_root=MEDIA_ROOT)

@@ -4,7 +4,7 @@
 # elsewhere.
 
 from django.contrib.auth import views
-from django.urls import path
+from django.urls import path, include
 from .views import sp, logoutpage
 
 
@@ -32,4 +32,5 @@ urlpatterns = [
 urlpatterns += [
     path('', sp, name='sp'),
     path('logoutpage/', logoutpage, name='logoutpage'),
+
 ]

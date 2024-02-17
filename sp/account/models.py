@@ -9,8 +9,7 @@ class User(AbstractUser):
         max_length=255, null=True, blank=True, verbose_name='نام خانوادگی')
     username = models.CharField(
         unique=True, max_length=255, null=False, blank=False, verbose_name='نام کاربری')
-    phone_number = models.CharField(
-        unique=True, max_length=14, verbose_name='تلفن همراه')
+    phone_number = models.CharField(max_length=14, verbose_name='تلفن همراه')
     email = models.EmailField(unique=True, verbose_name='ایمیل')
     profile_image = models.ImageField(
         upload_to='images/profiles', verbose_name='پروفایل', null=False, blank=True,

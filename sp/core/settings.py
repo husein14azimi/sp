@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'rest_framework',
     'extensions',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,15 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '330178569338-ecp9r7j9l3qioeovt72buno6hun0o793.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
