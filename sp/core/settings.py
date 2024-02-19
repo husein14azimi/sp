@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core.apps.CoreConfig',
     'account.apps.AccountConfig',
-    'rest_framework',
+    # 'rest_framework',
     'extensions',
     'social_django',
 ]
@@ -103,7 +103,6 @@ DATABASES = {
     }
 }
 
-
 # for sprediction.pythonanywhere server DB:
 # DATABASES = {
 #     'default': {
@@ -114,6 +113,28 @@ DATABASES = {
 #         'PASSWORD': 'Aa@123456'
 #     }
 # }
+
+
+# if config("ENGINE") == "sqlite3":
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / "db.sqlite",
+#         }
+#     }
+# elif config("ENGINE") == "mysql":
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': config("NAME"),
+#             "USER": config("USER"),
+#             "PASSWORD": config("PASSWORD"),
+#             "HOST": config("HOST"),
+#             'OPTIONS': {
+#                 'sql_mode': 'traditional',
+#             }
+#         }
+#     }
 
 
 # Password validation
@@ -150,7 +171,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+# for local server:
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# for remote server:
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
 
 
 # Hussein Azimi: Media files
