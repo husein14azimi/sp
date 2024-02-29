@@ -4,20 +4,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suicide Prediction: home</title>
+    <title>کارو | پیش بینی افکار خودکشی</title>
+    <!-- <link rel="stylesheet" href="/src/css/style.css"> -->
+    <style>
+        @import url(/src/fonts/stylesheet.css);
+
+        .text-blue {
+            color: #55acee;
+        }
+
+        .text-black {
+            color: #292f33;
+        }
+
+        .text-light-black {
+            color: #66757f;
+        }
+
+        .text-dark-gray {
+            color: #ccd6dd;
+        }
+
+        .text-gray {
+            color: #e1e8ed;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+
+        .bg-blue {
+            background-color: #55acee;
+        }
+
+        .bg-black {
+            background-color: #292f33;
+        }
+
+        .bg-light-black {
+            background-color: #66757f;
+        }
+
+        .bg-dark-gray {
+            background-color: #ccd6dd;
+        }
+
+        .bg-gray {
+            background-color: #e1e8ed;
+        }
+
+        .bg-white {
+            background-color: #ffffff;
+        }
+
+        .center-elems {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            background-color: #292f33;
+            direction: rtl;
+            font-family: "B Roya";
+        }
+
+        body * {
+            font-family: inherit;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 120px;
+        }
+
+        .top-header .main-logo-c {
+            min-width: 400px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .top-header .main-logo-c img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .top-header .main-logo-c .logo-text-c {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .top-header .main-logo-c .logo-text-c h2 {
+            font-size: 1rem;
+        }
+
+        .top-header .login-buttons-c {
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            font-weight: bold;
+        }
+
+        .top-header .login-buttons-c a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-header .login-buttons-c .signin-btn {
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            background: transparent;
+            border: 2px solid #55acee;
+            color: #e1e8ed;
+            cursor: pointer;
+        }
+
+        .top-header .login-buttons-c .login-btn {
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #55acee;
+            border: none;
+            cursor: pointer;
+        }
+
+        .top-header .login-buttons-c button:hover {
+            box-shadow: 0 0 10px #55acee;
+        }
+
+        .top-header .login-buttons-c .login-modal {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .top-header .login-buttons-c .login-modal .close-btn {
+            font-size: 10rem;
+            color: #fff;
+            user-select: none;
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            text-shadow: 0px 0px 15px #ffffff;
+        }
+
+        .top-header .login-buttons-c .login-modal form {
+            width: 400px;
+            height: 450px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 2px 2px 30px #e1e8ed;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 10px 30px;
+            font-size: 1.3rem;
+        }
+
+        .top-header .login-buttons-c .login-modal form>* {
+            width: 100%;
+            height: 50px;
+        }
+
+        .top-header .login-buttons-c .login-modal form input[type=text],
+        .top-header .login-buttons-c .login-modal form input[type=password] {
+            display: block;
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            border: 2px solid #ccd6dd;
+            background-color: #e1e8ed;
+            direction: ltr;
+        }
+
+        .top-header .login-buttons-c .login-modal form .submit-c {
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .top-header .login-buttons-c .login-modal form .submit-c button {
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            color: black;
+            font-weight: bolder;
+        }
+
+        main {
+            width: 100%;
+            position: absolute;
+            top: 120px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            border: 1px solid #66757f;
+            border-right: none;
+            border-left: none;
+        }
+
+        main nav {
+            width: 300px;
+            height: 100%;
+            border-left: 1px solid #66757f;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        main nav>ul {
+            font-weight: bolder;
+            list-style: none;
+            width: 280px;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        main nav>ul>li {
+            height: 50px;
+            width: 100%;
+        }
+
+        main nav>ul>li>a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        main nav>ul>li>a>.outer-bullet {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        main nav>ul>li>a>.outer-bullet>.inner-bullet {
+            width: 50%;
+            height: 50%;
+            background-size: 100% 100%;
+            transition: transform 0.5s;
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        main nav>ul>li>a>.nav-item {
+            font-size: 1.3rem;
+            width: 255px;
+            padding-right: 40px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+        }
+
+        main nav>ul>li.active .nav-item {
+            background-color: #55acee;
+        }
+
+        main nav>ul>li.active .outer-bullet {
+            background-color: #ffffff;
+        }
+
+        main nav>ul>li.active .inner-bullet {
+            filter: grayscale(1);
+        }
+
+        main nav>ul>li:hover:not(.active) .nav-item {
+            background-color: #ccd6dd;
+            color: #292f33;
+        }
+
+        main nav>ul>li:hover:not(.active) .inner-bullet {
+            transform: translateX(-15px);
+            filter: drop-shadow(1px 1px #222);
+        }
+
+        main nav>ul>li:nth-child(1) .inner-bullet {
+            background: url(/images/icons/home-icon.svg) no-repeat;
+        }
+
+        main nav>ul>li:nth-child(2) .inner-bullet {
+            background: url(/images/icons/product.svg) no-repeat;
+        }
+
+        main nav>ul>li:nth-child(3) .inner-bullet {
+            background: url(/images/icons/credit-card-icon.svg) no-repeat;
+        }
+
+        main nav>ul>li:nth-child(4) .inner-bullet {
+            background: url(/images/icons/contact-us-icon.svg) no-repeat;
+        }
+
+        main nav>ul>li:nth-child(5) .inner-bullet {
+            background: url(/images/icons/other-product.svg) no-repeat;
+        }
+
+        main .main-app {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 300px;
+            left: 0;
+            background-color: #1a1e20;
+        }
+
+        /*# sourceMappingURL=style.css.map */
+    </style>
 </head>
 
 <body>
-    {% if user.is_authenticated %}
-    <p>welcome {{request.user.first_name}}! you are logged in as {{request.user.username}}</p>
-    <p>here is the link to the:</p> <a href="{% url 'account:sp' %}">App Page</a>
+    <header class="top-header">
+        <div class="main-logo-c">
+            <div class="center-elems">
+                <img src="/media/images/static-front/main-logo.png" alt="تیم فناور کارو" width="100">
+            </div>
+            <div class="logo-text-c">
+                <a href="https://caro-official.ir/" target="_blank">
+                    <h1 class="text-gray">تیم فناور کارو</h1>
+                </a>
+                <h2 class="text-dark-gray">پروژه پیش بینی افکار خودکشی</h2>
+            </div>
+        </div>
+        <div class="login-buttons-c">
+            <!-- <button class="signin-btn">
+                <a href="/pages/register.html">
+                    ثبت نام
+                </a>
+            </button> -->
 
-    {% else %}
-    <p>welcome to the suicide prediction homepage.</p>
-    <p>here is the link to the:</p> <a href="{% url 'account:login' %}">Login Page</a>
 
-    {% endif %}
 
+
+
+            {% if user.is_authenticated %}
+            <button class="login-btn">
+                <span class="text-white">
+                    <b>
+                        {{request.user.username}}
+                    </b>
+                </span>
+            </button>
+            {% else %}
+            <button class="login-btn" id="loginBtn">
+                <span class="text-white">
+                    <b>
+                        ورود
+                    </b>
+                </span>
+            </button>
+            {% endif %}
+
+            <!-- <modal>
+            <div class="login-modal" id="loginModal">
+                <form action="{% url 'account:login' %}" method="post">{% csrf_token %}
+                    {% if form.errors %}
+                    <div class="errors">
+                        {{ form.non_field_errors }}
+                        {% if form.username.errors %}
+                        <p>username error:{{ form.username.errors }}</p>
+                        {% endif %}
+                        {% if form.password.errors %}
+                        <p>password error:{{ form.password.errors }}</p>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+
+                    <div class="close-btn" id="closeModal">×</div>
+                    <div class="username-c">
+                        <label for="username">نام کاربری:</label>
+                        <input type="text" name="username" id="username" autofocus="" autocapitalize="none"
+                            autocomplete="username" required="">
+                    </div>
+                    <div class="password-c">
+                        <label for="userpass">رمز عبور:</label>
+                        <input type="password" name="password" id="userpass" autocomplete="current-password"
+                            required="">
+                    </div>
+                    <div class="rememberme-c">
+                        <label for="rememberme">مرا به خاطر بسپار</label>
+                        <input type="checkbox" name="rememberme" id="rememberme">
+                    </div>
+                    <div class="submit-c">
+                        <button class="login-btn" id="loginBtn" type="submit">ورود</button>
+                        <button class="signin-btn">
+                            <a href="/pages/register.html">
+                                ثبت نام
+                            </a>
+                        </button>
+                    </div>
+                </form>
+                </modal>  -->
+        </div>
+    </header>
+
+    <main class="">
+        <nav>
+            <ul class="text-white">
+                <li class="active">
+                    <a href="#">
+                        <div class="outer-bullet">
+                            <div class="inner-bullet"></div>
+                        </div>
+                        <div class="nav-item">خانه</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'account:sp' %}">
+                        <div class="outer-bullet">
+                            <div class="inner-bullet"></div>
+                        </div>
+                        <div class="nav-item">اپلیکیشن</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://caro-official.ir/">
+                        <div class="outer-bullet">
+                            <div class="inner-bullet"></div>
+                        </div>
+                        <div class="nav-item">درباره‌ی ما</div>
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="/pages/order.html">
+                        <div class="outer-bullet">
+                            <div class="inner-bullet"></div>
+                        </div>
+                        <div class="nav-item">خرید اشتراک</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/other-products.html">
+                        <div class="outer-bullet">
+                            <div class="inner-bullet"></div>
+                        </div>
+                        <div class="nav-item">سایر محصولات</div>
+                    </a>
+                </li> -->
+
+            </ul>
+        </nav>
+        <div class="main-app center-elems text-white">
+            <!-- <h2>لطفا ابتدا وارد شوید و یا ثبت نام کنید</h2>
+
+            {% if user.is_authenticated %}
+            <p>welcome {{request.user.first_name}}! you are logged in as {{request.user.username}}</p>
+            <p>here is the link to the:</p> <a href="{% url 'account:sp' %}">App Page</a>
+
+            {% else %}
+            <p>welcome to the suicide prediction homepage.</p>
+            <p>here is the link to the:</p> <a href="{% url 'account:login' %}">Login Page</a>
+
+            {% endif %} -->
+
+
+            <h2 style="text-align: center;">
+                پروژه‌‌ی پیشگیری با استفاده از داده‌های متنی
+            </h2>
+
+            <p style="text-align: center;">
+                توضیحات مربوط به پروژه در اینجا نمایش داده می‌شود.
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و
+                متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده،
+                شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی
+                الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و
+                دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای
+                اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+            </p>
+
+
+        </div>
+    </main>
+    <!-- <script src="/src/script/script.js"></script> -->
+    <script>
+        // display modal of login 
+        // const loginBtn = document.getElementById('loginBtn')
+        // const closeBtn = document.getElementById('closeModal')
+        // const modal = document.getElementById('loginModal');
+        // loginBtn.addEventListener('click', () => {
+        //     modal.style.display = "flex"
+        //     closeBtn.addEventListener('click', () => {
+        //         modal.style.display = "none"
+        //     })
+        // })
+        // window.onclick = function (event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        //     }
+        // }
+
+
+        document.getElementById('loginBtn').addEventListener('click', function () {
+            window.location.href = "{% url 'account:login' %}";
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'B Roya';
+    src: url('BRoya.woff2') format('woff2'),
+        url('BRoya.woff') format('woff'),
+        url('BRoya.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'B Roya';
+    src: url('BRoyaBold.woff2') format('woff2'),
+        url('BRoyaBold.woff') format('woff'),
+        url('BRoyaBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -5,7 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import User
 
 
-class MainForm(forms.Form):
+class SpForm(forms.Form):
     formsDotPyTextField = forms.CharField(label='Enter your text')
 
 

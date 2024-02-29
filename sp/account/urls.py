@@ -4,8 +4,8 @@
 # elsewhere.
 
 from django.contrib.auth import views
-from django.urls import path, include
-from .views import sp, logoutpage
+from django.urls import path
+from .views import SP
 
 
 app_name = 'account'
@@ -30,7 +30,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('', sp, name='sp'),
-    path('logoutpage/', logoutpage, name='logoutpage'),
+    path('', SP.as_view(), name='sp'),
 
 ]

@@ -30,7 +30,7 @@ LOGOUT_URL = "account:logout"
 SECRET_KEY = 'django-insecure-g$l-i1=vn%)-k6!dde*i7oc=w7zncyou*4j)*qi0v(766%+i2#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['sprediction.pythonanywhere.com', '127.0.0.1']
 
@@ -173,11 +173,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 # for local server:
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # for remote server:
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static")
+# ]
 
 
 # Hussein Azimi: Media files

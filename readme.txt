@@ -11,3 +11,15 @@ from django.conf import settings   >>>   settings.AUTH_USER_MODEL   src = https:
 
 for the google auth:
 By continuing, Google will share your name, email address, language preference, and profile picture with Suicide Prediction. See Suicide Prediction’s Privacy Policy and Terms of Service.
+
+
+
+
+
+
+
+
+
+deleted but may be needed:
+in the sp.html, the main form:
+                        {{ form.as_p }}

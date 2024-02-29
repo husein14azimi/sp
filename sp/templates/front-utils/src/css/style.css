@@ -1,0 +1,305 @@
+@import url(/src/fonts/stylesheet.css);
+.text-blue {
+  color: #55acee;
+}
+
+.text-black {
+  color: #292f33;
+}
+
+.text-light-black {
+  color: #66757f;
+}
+
+.text-dark-gray {
+  color: #ccd6dd;
+}
+
+.text-gray {
+  color: #e1e8ed;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.bg-blue {
+  background-color: #55acee;
+}
+
+.bg-black {
+  background-color: #292f33;
+}
+
+.bg-light-black {
+  background-color: #66757f;
+}
+
+.bg-dark-gray {
+  background-color: #ccd6dd;
+}
+
+.bg-gray {
+  background-color: #e1e8ed;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.center-elems {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: #292f33;
+  direction: rtl;
+  font-family: "B Roya";
+}
+body * {
+  font-family: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 120px;
+}
+.top-header .main-logo-c {
+  min-width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.top-header .main-logo-c img {
+  width: 100px;
+  height: 100px;
+}
+.top-header .main-logo-c .logo-text-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.top-header .main-logo-c .logo-text-c h2 {
+  font-size: 1rem;
+}
+.top-header .login-buttons-c {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+.top-header .login-buttons-c a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.top-header .login-buttons-c .signin-btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background: transparent;
+  border: 2px solid #55acee;
+  color: #e1e8ed;
+  cursor: pointer;
+}
+.top-header .login-buttons-c .login-btn {
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #55acee;
+  border: none;
+  cursor: pointer;
+}
+.top-header .login-buttons-c button:hover {
+  box-shadow: 0 0 10px #55acee;
+}
+.top-header .login-buttons-c .login-modal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+.top-header .login-buttons-c .login-modal .close-btn {
+  font-size: 10rem;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  text-shadow: 0px 0px 15px #ffffff;
+}
+.top-header .login-buttons-c .login-modal form {
+  width: 400px;
+  height: 450px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 2px 2px 30px #e1e8ed;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 1.3rem;
+}
+.top-header .login-buttons-c .login-modal form > * {
+  width: 100%;
+  height: 50px;
+}
+.top-header .login-buttons-c .login-modal form input[type=text], .top-header .login-buttons-c .login-modal form input[type=password] {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid #ccd6dd;
+  background-color: #e1e8ed;
+  direction: ltr;
+}
+.top-header .login-buttons-c .login-modal form .submit-c {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.top-header .login-buttons-c .login-modal form .submit-c button {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  color: black;
+  font-weight: bolder;
+}
+
+main {
+  width: 100%;
+  position: absolute;
+  top: 120px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border: 1px solid #66757f;
+  border-right: none;
+  border-left: none;
+}
+main nav {
+  width: 300px;
+  height: 100%;
+  border-left: 1px solid #66757f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden;
+}
+main nav > ul {
+  font-weight: bolder;
+  list-style: none;
+  width: 280px;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+main nav > ul > li {
+  height: 50px;
+  width: 100%;
+}
+main nav > ul > li > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+main nav > ul > li > a > .outer-bullet {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+main nav > ul > li > a > .outer-bullet > .inner-bullet {
+  width: 50%;
+  height: 50%;
+  background-size: 100% 100%;
+  transition: transform 0.5s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+main nav > ul > li > a > .nav-item {
+  font-size: 1.3rem;
+  width: 255px;
+  padding-right: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+main nav > ul > li.active .nav-item {
+  background-color: #55acee;
+}
+main nav > ul > li.active .outer-bullet {
+  background-color: #ffffff;
+}
+main nav > ul > li.active .inner-bullet {
+  filter: grayscale(1);
+}
+main nav > ul > li:hover:not(.active) .nav-item {
+  background-color: #ccd6dd;
+  color: #292f33;
+}
+main nav > ul > li:hover:not(.active) .inner-bullet {
+  transform: translateX(-15px);
+  filter: drop-shadow(1px 1px #222);
+}
+main nav > ul > li:nth-child(1) .inner-bullet {
+  background: url(/images/icons/home-icon.svg) no-repeat;
+}
+main nav > ul > li:nth-child(2) .inner-bullet {
+  background: url(/images/icons/product.svg) no-repeat;
+}
+main nav > ul > li:nth-child(3) .inner-bullet {
+  background: url(/images/icons/credit-card-icon.svg) no-repeat;
+}
+main nav > ul > li:nth-child(4) .inner-bullet {
+  background: url(/images/icons/contact-us-icon.svg) no-repeat;
+}
+main nav > ul > li:nth-child(5) .inner-bullet {
+  background: url(/images/icons/other-product.svg) no-repeat;
+}
+main .main-app {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 300px;
+  left: 0;
+  background-color: #1a1e20;
+}
+
+/*# sourceMappingURL=style.css.map */
