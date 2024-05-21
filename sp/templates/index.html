@@ -394,46 +394,6 @@
             </button>
             {% endif %}
 
-            <!-- <modal>
-            <div class="login-modal" id="loginModal">
-                <form action="{% url 'account:login' %}" method="post">{% csrf_token %}
-                    {% if form.errors %}
-                    <div class="errors">
-                        {{ form.non_field_errors }}
-                        {% if form.username.errors %}
-                        <p>username error:{{ form.username.errors }}</p>
-                        {% endif %}
-                        {% if form.password.errors %}
-                        <p>password error:{{ form.password.errors }}</p>
-                        {% endif %}
-                    </div>
-                    {% endif %}
-
-                    <div class="close-btn" id="closeModal">×</div>
-                    <div class="username-c">
-                        <label for="username">نام کاربری:</label>
-                        <input type="text" name="username" id="username" autofocus="" autocapitalize="none"
-                            autocomplete="username" required="">
-                    </div>
-                    <div class="password-c">
-                        <label for="userpass">رمز عبور:</label>
-                        <input type="password" name="password" id="userpass" autocomplete="current-password"
-                            required="">
-                    </div>
-                    <div class="rememberme-c">
-                        <label for="rememberme">مرا به خاطر بسپار</label>
-                        <input type="checkbox" name="rememberme" id="rememberme">
-                    </div>
-                    <div class="submit-c">
-                        <button class="login-btn" id="loginBtn" type="submit">ورود</button>
-                        <button class="signin-btn">
-                            <a href="/pages/register.html">
-                                ثبت نام
-                            </a>
-                        </button>
-                    </div>
-                </form>
-                </modal>  -->
         </div>
     </header>
 
@@ -441,9 +401,11 @@
         <nav>
             <ul class="text-white">
                 <li class="active">
+
                     <a href="#">
                         <div class="outer-bullet">
-                            <div class="inner-bullet"></div>
+                            <div class="inner-bullet"
+                                style="background: url(/media/images/static-front/home-icon.svg) no-repeat;"></div>
                         </div>
                         <div class="nav-item">خانه</div>
                     </a>
@@ -484,18 +446,6 @@
             </ul>
         </nav>
         <div class="main-app center-elems text-white">
-            <!-- <h2>لطفا ابتدا وارد شوید و یا ثبت نام کنید</h2>
-
-            {% if user.is_authenticated %}
-            <p>welcome {{request.user.first_name}}! you are logged in as {{request.user.username}}</p>
-            <p>here is the link to the:</p> <a href="{% url 'account:sp' %}">App Page</a>
-
-            {% else %}
-            <p>welcome to the suicide prediction homepage.</p>
-            <p>here is the link to the:</p> <a href="{% url 'account:login' %}">Login Page</a>
-
-            {% endif %} -->
-
 
             <h2 style="text-align: center;">
                 پروژه‌‌ی پیشگیری با استفاده از داده‌های متنی

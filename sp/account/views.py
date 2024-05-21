@@ -1,6 +1,6 @@
 # from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from django.contrib import auth
+# from django.shortcuts import render, redirect
+# from django.contrib import auth
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import FormView
@@ -15,5 +15,5 @@ class SP(LoginRequiredMixin, FormView):
 
     def form_valid(self, form):
         template_text = form.cleaned_data['formsDotPyTextField']
-        modified_text = utils.substring_adder(template_text)
+        modified_text = utils.ai(template_text)
         return self.render_to_response(self.get_context_data(form=form, textShownInHtml=modified_text))

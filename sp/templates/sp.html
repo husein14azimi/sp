@@ -476,11 +476,14 @@
                         background-color: inherit;
                         font-size: 18px;
                         resize: none;
-                        overflow: scroll;">
-                        <p>You entered: {{ textShownInHtml }}</p>
-                        <p style="font-family: monospace;">request: {{ request }}</p>
-                        <p>request user: <span style="font-family: monospace;">{{ request.user }}</span></p>
-                        <p>request method: <span style="font-family: monospace;">{{ request.method }}</span></p>
+                        overflow: scroll;
+                        /* STYLES BELOW ARE FOR ENGLISH OUTPUTS */
+                        direction: initial;
+                        text-align: center;">
+                        <p>{{ textShownInHtml }}</p>
+                        <!-- <p style="font-family: monospace;">request: {{ request }}</p> -->
+                        <!-- <p>request user: <span style="font-family: monospace;">{{ request.user }}</span></p> -->
+                        <!-- <p>request method: <span style="font-family: monospace;">{{ request.method }}</span></p> -->
 
                     </div>
 

@@ -1,5 +1,5 @@
-from . import extensionTest
+from .ai import suicidal
 
 
-def substring_adder(string):
-    return extensionTest.extensionTestFunction(string)
+def ai(string):
+    return suicidal.main(string)
